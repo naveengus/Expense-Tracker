@@ -1,0 +1,81 @@
+import React from "react";
+
+function AddIncome() {
+    return (
+        <div className="pt-16 pb-18">
+            <h1 className="text-xl font-bold mb-4 py-2 text-center text-green-400">Add Your Income</h1>
+            <form className="space-y-4 m-5 p-2">
+                {/* Amount */}
+                <div>
+                    <label className="block text-sm font-medium text-gray-900">
+                        Amount
+                    </label>
+                    <input
+                        type="number"
+                        placeholder="$ 100"
+                        className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                    />
+                </div>
+
+                {/* Date */}
+                <div>
+                    <label className="block text-sm font-medium text-gray-900">Date</label>
+                    <input
+                        type="date"
+                        className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                    />
+                </div>
+
+                {/* Category */}
+                <div>
+                    <label
+                        htmlFor="category"
+                        className="block text-sm font-medium text-gray-900"
+                    >
+                        Category
+                    </label>
+                    <select
+                        id="category"
+                        name="category"
+                        className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                    >
+                        <option value="salary">Salary</option>
+                        <option value="pocket">Pocket Money</option>
+                        <option value="freelance">Freelance</option>
+                        <option value="others">Others</option>
+                    </select>
+                </div>
+
+                {/* Notes */}
+                <div>
+                    <label className="block text-sm font-medium text-gray-900">
+                        Notes
+                    </label>
+                    <input
+                        type="text"
+                        placeholder="Write a note..."
+                        className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                    />
+                </div>
+
+                {/* Buttons */}
+                <div className="flex gap-4 text-center">
+                    <button
+                        type="submit"
+                        className="mt-4 w-28 rounded-md bg-indigo-600  py-2 text-white hover:bg-indigo-700"
+                    >
+                        Add Income
+                    </button>
+                    <button
+                        type="reset"
+                        className="mt-4 w-28 rounded-md bg-gray-600  py-2 text-white hover:bg-gray-700"
+                    >
+                        Clear
+                    </button>
+                </div>
+            </form>
+        </div>
+    );
+}
+
+export default AddIncome;

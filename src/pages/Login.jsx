@@ -12,10 +12,8 @@ function Login() {
         e.preventDefault();
         try {
             let res = await AxiosService.post(ApiRoutes.LOGIN.Path, { email, password });
-
             // backend response
             console.log(res);
-
             // store token & role if backend sends it
             if (res.token) {
                 sessionStorage.setItem("token", res.token);
@@ -23,7 +21,7 @@ function Login() {
             }
 
             alert(res.message);
-            navigate("/dashboard");
+            navigate("/home");
         } catch (error) {
             alert(error.message || "Internal Server Error");
 
