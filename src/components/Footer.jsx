@@ -1,5 +1,5 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 function Footer() {
     const navigate = useNavigate()
     const handleIncome = () => {
@@ -16,10 +16,10 @@ function Footer() {
             </div>
 
             <div className='grid grid-cols-4 gap-2 h-16 bg-gray-800'>
-                <button>home</button>
-                <button>transition</button>
-                <button>categories</button>
-                <button>profile</button>
+                <button onClick={() => navigate('/home')}>home</button>
+                <button onClick={() => navigate('/transition')}>transition</button>
+                <button onClick={() => navigate('/categories')}>categories</button>
+                <button onClick={() => navigate('/profile')}>profile</button>
             </div>
 
         </footer>

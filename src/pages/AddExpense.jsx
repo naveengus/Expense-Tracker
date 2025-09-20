@@ -1,10 +1,33 @@
 import React from 'react'
-
+import AxiosService from '../utils/AxiosService';
+import ApiRoutes from '../utils/ApiRoutes';
+import { useNavigate } from 'react-router-dom';
 function AddExpense() {
+    const navigate = useNavigate()
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        const expense = {
+            amount: formData.get("amount"),
+            date: formData.get("date"),
+            category: formData.get("category"),
+            notes: formData.get("notes"),
+        }
+        try {
+            let res = await AxiosService.post(ApiRoutes.EXPENSECREATE.Path, expense, { authenticate: true });
+            console.log(res);
+
+            alert(res.message || "Expense added successfully")
+            navigate("/home")
+        } catch (error) {
+            console.error("Error:", error);
+            alert(error.message || "Internal Server Error");
+        }
+    }
     return (
         <div className='pt-16 pb-18'>
             <h1 className="text-xl font-bold mb-4 py-2 text-center text-red-400">Add Your Expense </h1>
-            <form className="space-y-4 m-5 p-2">
+            <form className="space-y-4 m-5 p-2" onSubmit={handleSubmit}>
                 {/* Amount */}
                 <div>
                     <label className="block text-sm font-medium text-gray-900">
@@ -12,6 +35,7 @@ function AddExpense() {
                     </label>
                     <input
                         type="number"
+                        name='amount'
                         placeholder="$ 100"
                         className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                     />
@@ -22,6 +46,7 @@ function AddExpense() {
                     <label className="block text-sm font-medium text-gray-900">Date</label>
                     <input
                         type="date"
+                        name='date'
                         className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                     />
                 </div>
@@ -63,6 +88,7 @@ function AddExpense() {
                     </label>
                     <input
                         type="text"
+                        name='notes'
                         placeholder="Write a note..."
                         className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                     />

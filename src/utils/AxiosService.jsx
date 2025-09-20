@@ -2,7 +2,7 @@ import axios from "axios"
 import { logout } from "./LogOut";
 
 const AxiosService = axios.create({
-    baseURL: "http://localhost:4000",
+    baseURL: import.meta.env.VITE_BASE_URL,
     headers: {
         "Content-Type": "application/json"
     }
