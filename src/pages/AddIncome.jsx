@@ -34,7 +34,10 @@ function AddIncome() {
             </h1>
             <hr className="m-5 " />
 
-            <form className="space-y-4 m-5 p-2" onSubmit={handleSubmit}>
+            <form className="space-y-4 m-5 p-5 rounded-2xl bg-gray-50" onSubmit={handleSubmit}>
+                <h1 className="text-xl font-bold mb-4 py-2 m-3 text-center text-gray-400">
+                    Add Your Income
+                </h1>
                 {/* Amount */}
                 <div>
                     <label className="block text-sm font-medium text-gray-900">

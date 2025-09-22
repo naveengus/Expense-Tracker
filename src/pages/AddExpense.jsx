@@ -2,6 +2,8 @@ import React from 'react'
 import AxiosService from '../utils/AxiosService';
 import ApiRoutes from '../utils/ApiRoutes';
 import { useNavigate } from 'react-router-dom';
+import LunchDiningIcon from '@mui/icons-material/LunchDining';
+import AddBusinessIcon from '@mui/icons-material/AddBusiness';
 function AddExpense() {
     const navigate = useNavigate()
     const handleSubmit = async (e) => {
@@ -30,8 +32,9 @@ function AddExpense() {
             <h1 className="text-xl font-bold mb-4 py-2 text-center m-3 text-red-400">Add Your Expense </h1>
             <hr className="m-5 " />
 
-            <form className="space-y-4 m-5 p-2" onSubmit={handleSubmit}>
-                {/* Amount */}
+            <form className="space-y-4 m-5 p-5 rounded-2xl bg-gray-50" onSubmit={handleSubmit}>
+                <h1 className="text-xl font-bold mb-4 py-2 text-center m-3 text-gray-400">Add Your Expense </h1>
+
                 <div>
                     <label className="block text-sm font-medium text-gray-900">
                         Amount

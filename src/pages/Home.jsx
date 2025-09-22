@@ -65,7 +65,7 @@ function Home() {
     // );
 
     return (
-        <div className="pt-16 pb-18 ">
+        <div className="pt-14 pb-18 ">
             <div className=" grid grid-cols-3 items-center p-3 text-center text-white  bg-gray-800">
                 {/* fixed top-16 left-0 w-full  */}
                 <div>
@@ -86,26 +86,40 @@ function Home() {
 
             {/* 🔹 Monthly Filter */}
             <div className="mb-5 p-5">
-                <h2 className="text-xl font-semibold">Monthly Filter</h2>
+                {/* <h2 className="text-xl font-semibold">Monthly Filter</h2>
                 <input
                     type="month"
                     value={selectedMonth}
                     onChange={(e) => setSelectedMonth(e.target.value)}
                     className="border p-2 rounded mt-2"
-                />
+                /> */}
                 <hr className="my-5" />
 
                 <h1 className="text-2xl font-bold mb-4 text-center">Expense Tracker</h1>
 
-                <ul className="mt-3 space-y-2 ">
+                <ul className="mt-3 space-y-2">
                     {combined.length > 0 ? (
                         combined.map((item) => (
                             <li
-                                key={item._id} // or item.id
-                                className="flex justify-between  p-2 rounded shadow-sm bg-gray-200"
+                                key={item._id}
+                                className="flex justify-between items-center p-2 rounded-2xl shadow-sm bg-gray-50"
                             >
-                                <span>{item.category}</span>
-                                <span className={item.type === "income" ? "text-green-500" : "text-red-500"}>
+                                <div>
+                                    <span className="block font-medium">{item.category}</span>
+                                    <span className="text-xs text-gray-600">
+                                        {new Date(item.date).toLocaleDateString("en-GB", {
+                                            day: "2-digit",
+                                            month: "short",
+                                            year: "numeric",
+                                        })
+                                        }
+                                    </span>
+                                </div>
+                                <span
+                                    className={
+                                        item.type === "income" ? "text-green-500 font-semibold pr-3" : "text-red-500 font-semibold pr-3"
+                                    }
+                                >
                                     {item.type === "income" ? "+ $" : "- $"}
                                     {item.amount}
                                 </span>
@@ -116,9 +130,9 @@ function Home() {
                     )}
                 </ul>
 
+
             </div>
 
-            <hr className="my-5" />
 
 
         </div>
