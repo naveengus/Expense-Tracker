@@ -102,7 +102,7 @@ function Home() {
                         combined.map((item) => (
                             <li
                                 key={item._id} // or item.id
-                                className="flex justify-between border p-2 rounded shadow-sm bg-gray-200"
+                                className="flex justify-between  p-2 rounded shadow-sm bg-gray-200"
                             >
                                 <span>{item.category}</span>
                                 <span className={item.type === "income" ? "text-green-500" : "text-red-500"}>

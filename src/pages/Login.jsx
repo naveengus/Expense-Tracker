@@ -15,14 +15,10 @@ function Login() {
         email,
         password,
       });
-      // backend response
-      console.log(res);
-      // store token & role if backend sends it
       if (res.token) {
         sessionStorage.setItem("token", res.token);
         sessionStorage.setItem("role", res.role);
       }
-
       alert(res.message);
       navigate("/home");
     } catch (error) {
@@ -31,7 +27,7 @@ function Login() {
   };
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-200">
-      <div className="w-full max-w-md bg-green-100 shadow-lg rounded-xl p-6 m-5">
+      <div className="w-full max-w-md bg-white shadow-lg rounded-xl p-6 m-5">
         <h1 className="text-2xl font-bold mb-4 text-center text-gray-700">
           Expense Tracker
         </h1>
@@ -47,7 +43,7 @@ function Login() {
               value={email}
               placeholder="Enter your email"
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+              className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"
             />
           </div>
           <div>
@@ -58,12 +54,12 @@ function Login() {
               value={password}
               placeholder="Enter your password"
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+              className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"
             />
           </div>
           <button
             type="submit"
-            className="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition duration-200"
+            className="w-full bg-green-500 text-white py-2 rounded-lg hover:bg-green-600 transition duration-200"
           >
             Login
           </button>

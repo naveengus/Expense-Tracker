@@ -26,7 +26,10 @@ function AddExpense() {
     }
     return (
         <div className='pt-16 pb-18'>
-            <h1 className="text-xl font-bold mb-4 py-2 text-center text-red-400">Add Your Expense </h1>
+
+            <h1 className="text-xl font-bold mb-4 py-2 text-center m-3 text-red-400">Add Your Expense </h1>
+            <hr className="m-5 " />
+
             <form className="space-y-4 m-5 p-2" onSubmit={handleSubmit}>
                 {/* Amount */}
                 <div>
@@ -98,7 +101,7 @@ function AddExpense() {
                 <div className="flex gap-4 text-center">
                     <button
                         type="submit"
-                        className="mt-4 w-28 rounded-md bg-indigo-600  py-2 text-white hover:bg-indigo-700"
+                        className="mt-4 w-28 rounded-md bg-red-600  py-2 text-white hover:bg-red-700"
                     >
                         Add Expense
                     </button>
