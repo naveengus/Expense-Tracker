@@ -2,8 +2,8 @@ import axios from "axios";
 import { logout } from "./LogOut";
 
 const AxiosService = axios.create({
-    // baseURL: import.meta.env.VITE_BASE_URL,
-    baseURL: "http://localhost:4000",
+    baseURL: import.meta.env.VITE_BASE_URL,
+    // baseURL: "http://localhost:4000",
     headers: {
         "Content-Type": "application/json",
     },
