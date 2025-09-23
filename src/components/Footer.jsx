@@ -15,15 +15,15 @@ function Footer() {
     return (
         <footer className='fixed bottom-0 left-0 w-full text-white text-center'>
             <div className='flex justify-evenly'>
-                <button className='border p-3 bg-red-400 rounded-3xl' onClick={hanleExpense}>- Expense</button>
-                <button className='border p-3 bg-green-400 rounded-3xl' onClick={handleIncome}>+ Income</button>
+                <button className='border p-3 bg-red-400 font-bold rounded-3xl' onClick={hanleExpense}>- Expense</button>
+                <button className='border p-3 bg-green-400 font-bold rounded-3xl' onClick={handleIncome}>+ Income</button>
             </div>
 
             <div className='grid grid-cols-4 gap-2 h-16 bg-gray-800'>
-                <button onClick={() => navigate('/home')}><HomeIcon /><br />Home</button>
-                <button onClick={() => navigate('/transition')}><CreditScoreIcon /><br />Transition</button>
-                <button onClick={() => navigate('/categories')}><CategoryIcon /><br />categories</button>
-                <button onClick={() => navigate('/profile')}><ManageAccountsIcon /><br />profile</button>
+                <button onClick={() => navigate('/home')} className='text-tiny'><HomeIcon /><br />Home</button>
+                <button onClick={() => navigate('/transition')} className='text-tiny'><CreditScoreIcon /><br />Transition</button>
+                <button onClick={() => navigate('/categories')} className='text-tiny'><CategoryIcon /><br />categories</button>
+                <button onClick={() => navigate('/profile')} className='text-tiny'><ManageAccountsIcon /><br />profile</button>
             </div>
 
         </footer>

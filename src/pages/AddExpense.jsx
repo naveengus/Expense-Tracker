@@ -70,20 +70,20 @@ function AddExpense() {
                         name="category"
                         className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                     >
-                        <option value="house-rent">House Rent</option>
-                        <option value="food">Food</option>
-                        <option value="transport">Transport</option>
-                        <option value="petrol">Petrol</option>
-                        <option value="internet">Internet</option>
-                        <option value="clothes">Clothes</option>
-                        <option value="shopping">Shopping</option>
-                        <option value="electricity">Electricity Bill</option>
-                        <option value="movie">Movie</option>
-                        <option value="netflix">Netflix</option>
-                        <option value="sports">Sports</option>
-                        <option value="entertainment">Entertainment</option>
-                        <option value="general">General</option>
-                        <option value="others">Others</option>
+                        <option value="House-Rent">House Rent</option>
+                        <option value="Food"><LunchDiningIcon />Food</option>
+                        <option value="Transport">Transport</option>
+                        <option value="Petrol">Petrol</option>
+                        <option value="Internet">Internet</option>
+                        <option value="Clothes">Clothes</option>
+                        <option value="Shopping">Shopping</option>
+                        <option value="Electricity">Electricity Bill</option>
+                        <option value="Movie">Movie</option>
+                        <option value="Netflix">Netflix</option>
+                        <option value="Sports">Sports</option>
+                        <option value="Entertainment">Entertainment</option>
+                        <option value="General">General</option>
+                        <option value="Others">Others</option>
                     </select>
                 </div>
 

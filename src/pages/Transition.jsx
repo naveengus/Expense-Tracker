@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import AxiosService from "../utils/AxiosService";
 import ApiRoutes from "../utils/ApiRoutes";
-
+import { categoryIcons } from "../utils/Icons";
+import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
 function Transition() {
     const today = new Date();
     const currentMonth = today.toISOString().slice(0, 7); // YYYY-MM
@@ -52,11 +53,20 @@ function Transition() {
         (a, b) => new Date(b.date) - new Date(a.date)
     );
 
+
+
     // filter by month
     const filtered = combined.filter(
         (item) => item.date.slice(0, 7) === selectedMonth
     );
+    // filter by month
+    const monthIncome = filtered
+        .filter((item) => item.type === "income")
+        .reduce((sum, item) => sum + Number(item.amount), 0);
 
+    const monthExpense = filtered
+        .filter((item) => item.type === "expense")
+        .reduce((sum, item) => sum + Number(item.amount), 0);
     // show only income or expense
     const displayed = filtered.filter((item) => item.type === view);
 
@@ -72,7 +82,7 @@ function Transition() {
                     type="month"
                     value={selectedMonth}
                     onChange={(e) => setSelectedMonth(e.target.value)}
-                    className="border p-2 rounded mt-2"
+                    className=" p-2 rounded mt-2"
                 />
             </div>
 
@@ -80,6 +90,7 @@ function Transition() {
 
             {/* 🔹 Toggle Buttons */}
             <div className="flex justify-center gap-4 mb-4">
+
                 <button
                     onClick={() => setView("income")}
                     className={`px-4 py-2 rounded-lg ${view === "income"
@@ -99,7 +110,13 @@ function Transition() {
                     Expense
                 </button>
             </div>
-
+            <h1 className="flex justify-end mx-5 ">
+                <span className="text-gray-400 pr-1 align-middle">This Month Total : <CurrencyRupeeIcon sx={{ fontSize: 15 }} /></span><span className={
+                    view === "income"
+                        ? "text-green-500  font-semibold pr-3 align-middle"
+                        : "text-red-500 font-semibold pr-3 align-middle"
+                }>{view === "income" ? monthIncome : monthExpense}</span>
+            </h1>
             {/* 🔹 Transaction List */}
             <ul className="mt-3 space-y-2 mx-3">
                 {displayed.length > 0 ? (
@@ -109,8 +126,8 @@ function Transition() {
                             className="flex justify-between items-center p-3 rounded-2xl shadow-sm bg-gray-50"
                         >
                             <div>
-                                <span className="block font-medium">{item.category}</span>
-                                <span className="text-xs text-gray-600">
+                                <p className="flex justify-around px-2">{categoryIcons[item.category]}<span className="block font-medium px-2">{item.category}</span></p>
+                                <span className="text-xs text-gray-600 px-3">
                                     {new Date(item.date).toLocaleDateString("en-GB", {
                                         day: "2-digit",
                                         month: "short",

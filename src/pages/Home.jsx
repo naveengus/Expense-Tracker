@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import AxiosService from "../utils/AxiosService";
 import ApiRoutes from "../utils/ApiRoutes";
 import { useEffect } from "react";
+import { categoryIcons } from "../utils/Icons.jsx";
+import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
 
 function Home() {
     // Today values
@@ -69,16 +71,16 @@ function Home() {
             <div className=" grid grid-cols-3 items-center p-3 text-center text-white  bg-gray-800">
                 {/* fixed top-16 left-0 w-full  */}
                 <div>
-                    <p>Expense </p>
-                    $ <span className="text-red-500 text-xl">{totalExpense}</span>
+                    <p className="text-tiny mb-1 font-bold">Expense </p>
+                    <span className="text-red-400 text-xl align-middle p-1">{totalExpense}</span><CurrencyRupeeIcon sx={{ fontSize: 15 }} />
                 </div>
                 <div>
-                    <p>Income </p>
-                    $ <span className="text-green-500 text-xl">{totalIncome}</span>
+                    <p className="text-tiny mb-1 font-black">Income </p>
+                    <span className="text-green-400 text-xl align-middle p-1">{totalIncome}</span><CurrencyRupeeIcon sx={{ fontSize: 15 }} />
                 </div>
                 <div>
-                    <p>Balance </p>
-                    $ <span className="text-blue-500 text-xl">{totalIncome - totalExpense}</span>
+                    <p className="text-tiny mb-1 font-bold">Balance </p>
+                    <span className="text-blue-400 text-xl align-middle p-1">{totalIncome - totalExpense}</span><CurrencyRupeeIcon sx={{ fontSize: 15 }} />
                 </div>
 
             </div>
@@ -105,8 +107,8 @@ function Home() {
                                 className="flex justify-between items-center p-2 rounded-2xl shadow-sm bg-gray-50"
                             >
                                 <div>
-                                    <span className="block font-medium">{item.category}</span>
-                                    <span className="text-xs text-gray-600">
+                                    <p className="flex justify-around px-2">{categoryIcons[item.category]}<span className="block font-medium px-2">{item.category}</span></p>
+                                    <span className="text-xs text-gray-600 px-3">
                                         {new Date(item.date).toLocaleDateString("en-GB", {
                                             day: "2-digit",
                                             month: "short",
