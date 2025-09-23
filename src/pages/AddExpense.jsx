@@ -71,7 +71,7 @@ function AddExpense() {
                         className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                     >
                         <option value="House-Rent">House Rent</option>
-                        <option value="Food"><LunchDiningIcon />Food</option>
+                        <option value="Food">Food</option>
                         <option value="Transport">Transport</option>
                         <option value="Petrol">Petrol</option>
                         <option value="Internet">Internet</option>
