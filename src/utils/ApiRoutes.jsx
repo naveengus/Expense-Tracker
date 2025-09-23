@@ -6,6 +6,10 @@ export default {
         Path: "api/user/login",
         auth: false
     },
+    GETUSER: {
+        Path: "api/user/getUser",
+        auth: true
+    },
     INCOMECERATE: {
         Path: "/income/createIncome",
         auth: true
