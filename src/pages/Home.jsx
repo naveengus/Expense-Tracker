@@ -88,13 +88,7 @@ function Home() {
 
             {/* 🔹 Monthly Filter */}
             <div className="mb-5 p-5">
-                {/* <h2 className="text-xl font-semibold">Monthly Filter</h2>
-                <input
-                    type="month"
-                    value={selectedMonth}
-                    onChange={(e) => setSelectedMonth(e.target.value)}
-                    className="border p-2 rounded mt-2"
-                /> */}
+
                 <hr className="my-5" />
 
                 <h1 className="text-2xl font-bold mb-4 text-center">Expense Tracker</h1>
