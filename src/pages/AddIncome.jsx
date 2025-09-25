@@ -38,7 +38,7 @@ function AddIncome() {
                 <h1 className="text-xl font-bold mb-4 py-2 m-3 text-center text-gray-400">
                     Add Your Income
                 </h1>
-                {/* Amount */}
+
                 <div>
                     <label className="block text-sm font-medium text-gray-900">
                         Amount
@@ -52,7 +52,6 @@ function AddIncome() {
                     />
                 </div>
 
-                {/* Date */}
                 <div>
                     <label className="block text-sm font-medium text-gray-900">Date</label>
                     <input
@@ -63,7 +62,6 @@ function AddIncome() {
                     />
                 </div>
 
-                {/* Category */}
                 <div>
                     <label
                         htmlFor="category"
@@ -84,7 +82,6 @@ function AddIncome() {
                     </select>
                 </div>
 
-                {/* Notes */}
                 <div>
                     <label className="block text-sm font-medium text-gray-900">
                         Notes
@@ -97,7 +94,6 @@ function AddIncome() {
                     />
                 </div>
 
-                {/* Buttons */}
                 <div className="flex gap-4 text-center">
                     <button
                         type="submit"

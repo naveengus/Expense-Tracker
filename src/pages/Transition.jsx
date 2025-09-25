@@ -12,7 +12,7 @@ function Transition() {
     const [income, setIncome] = useState([]);
     const [totalIncome, setTotalIncome] = useState(0);
     const [totalExpense, setTotalExpense] = useState(0);
-    const [view, setView] = useState("income"); // 👈 default: income
+    const [view, setView] = useState("income");
 
     const getData = async () => {
         try {
@@ -44,22 +44,17 @@ function Transition() {
         getData();
     }, []);
 
-    // add type
     const incomeWithType = income.map((inc) => ({ ...inc, type: "income" }));
     const expenseWithType = expense.map((exp) => ({ ...exp, type: "expense" }));
 
-    // combined
     const combined = [...incomeWithType, ...expenseWithType].sort(
         (a, b) => new Date(b.date) - new Date(a.date)
     );
 
-
-
-    // filter by month
     const filtered = combined.filter(
         (item) => item.date.slice(0, 7) === selectedMonth
     );
-    // filter by month
+
     const monthIncome = filtered
         .filter((item) => item.type === "income")
         .reduce((sum, item) => sum + Number(item.amount), 0);
@@ -67,14 +62,14 @@ function Transition() {
     const monthExpense = filtered
         .filter((item) => item.type === "expense")
         .reduce((sum, item) => sum + Number(item.amount), 0);
-    // show only income or expense
+
     const displayed = filtered.filter((item) => item.type === view);
 
     return (
         <div className="pt-16 pb-18">
             <h1 className="text-center font-bold text-lg ">Transactions</h1>
 
-            {/* 🔹 Month Filter */}
+
             <div className="mb-5 mr-5 flex justify-end">
 
                 {/* <h2 className="text-xl font-semibold">Monthly Filter</h2> */}
@@ -88,7 +83,6 @@ function Transition() {
 
             <hr className="my-3 mx-5" />
 
-            {/* 🔹 Toggle Buttons */}
             <div className="flex justify-center gap-4 mb-4">
 
                 <button
@@ -117,7 +111,7 @@ function Transition() {
                         : "text-red-500 font-semibold pr-3 align-middle"
                 }>{view === "income" ? monthIncome : monthExpense}</span>
             </h1>
-            {/* 🔹 Transaction List */}
+
             <ul className="mt-3 space-y-2 mx-3">
                 {displayed.length > 0 ? (
                     displayed.map((item) => (

@@ -15,8 +15,8 @@ function Profile() {
     const [file, setFile] = useState(null);
     const [preview, setPreview] = useState('');
     const [editMode, setEditMode] = useState(false);
+    const BASE_URL = import.meta.env.VITE_BASE_URL;
 
-    // Fetch user and transactions
     const getData = async () => {
         try {
             const res = await AxiosService.get(ApiRoutes.GETUSER.Path, { authenticate: true });
@@ -39,7 +39,7 @@ function Profile() {
         getData();
     }, []);
 
-    // Handle file selection
+
     const handleFileChange = (e) => {
         const selectedFile = e.target.files[0];
         if (selectedFile) {
@@ -48,7 +48,6 @@ function Profile() {
         }
     };
 
-    // Handle update (name + profile picture)
     const handleUpload = async () => {
         if (!file && !name) return alert('Nothing to update!');
 
@@ -80,7 +79,7 @@ function Profile() {
                     className="size-30 rounded-full"
                     src={
                         preview ||
-                        (profile ? (profile.startsWith("http") ? profile : `http://localhost:4000/${profile}`) : 'default.jpg')
+                        (profile ? (profile.startsWith("http") ? profile : `${BASE_URL}/${profile}`) : "/default.jpg")
                     } alt="Profile"
                 />
                 <h1>{name}</h1>

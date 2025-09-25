@@ -85,14 +85,12 @@ function Home() {
 
             </div>
             <hr />
-
-            {/* 🔹 Monthly Filter */}
-            <div className="mb-5 p-5">
-
-                <hr className="my-5" />
-
+            <div className="pt-3 ">
                 <h1 className="text-2xl font-bold mb-4 text-center">Expense Tracker</h1>
+                <hr className="my-5" />
+            </div>
 
+            <div className="mb-5 p-5 pt-2">
                 <ul className="mt-3 space-y-2">
                     {combined.length > 0 ? (
                         combined.map((item) => (
@@ -136,55 +134,3 @@ function Home() {
 }
 
 export default Home;
-
-{/* <ul className="mt-3 space-y-2">
-    {monthlyExpenses.length > 0 ? (
-        monthlyExpenses.map((exp) => (
-            <li
-                key={exp.id}
-                className="flex justify-between border p-2 rounded shadow-sm"
-            >
-                <span>{exp.title}</span>
-                <span className="text-red-500">- ${exp.amount}</span>
-            </li>
-        ))
-    ) : (
-        <p className="text-gray-500">No expenses for this month.</p>
-    )}
-</ul> 
-
-
-
-  {/* 🔹 Range Filter */}
-{/* <div>
-    <h2 className="text-xl font-semibold">Date Range Filter</h2>
-    <div className="flex gap-3 mt-2">
-        <input
-            type="date"
-            value={fromDate}
-            onChange={(e) => setFromDate(e.target.value)}
-            className="border p-2 rounded"
-        />
-        <input
-            type="date"
-            value={toDate}
-            onChange={(e) => setToDate(e.target.value)}
-            className="border p-2 rounded"
-        />
-    </div>
-    <ul className="mt-3 space-y-2">
-        {rangeExpenses.length > 0 ? (
-            rangeExpenses.map((exp) => (
-                <li
-                    key={exp.id}
-                    className="flex justify-between border p-2 rounded shadow-sm"
-                >
-                    <span>{exp.title}</span>
-                    <span className="text-red-500">- ${exp.amount}</span>
-                </li>
-            ))
-        ) : (
-            <p className="text-gray-500">No expenses in this range.</p>
-        )}
-    </ul>
-</div> */}

@@ -72,7 +72,7 @@ function Categories() {
 
     return (
         <div className="pt-14 pb-18">
-            <h1 className="text-xl font-bold mb-4 text-center">
+            <h1 className="text-xl font-bold mb-4 mt-3 text-center">
                 Expense Categories
             </h1>
 
@@ -85,8 +85,8 @@ function Categories() {
                 />
             </div>
 
-            <div className="flex justify-center mt-2 mb-2">
-                <PieChart width={350} height={250} className="flex justify-center text-tiny rounded-2xl bg-gray-300">
+            <div className="flex justify-center mt-2 mb-2 z-0">
+                <PieChart width={350} height={250} className="flex justify-center text-tiny rounded-2xl bg-gray-300 relative  z-[-1000]">
                     <Pie
                         data={filteredData}
                         cx="50%"

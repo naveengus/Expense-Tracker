@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import AxiosService from "../utils/AxiosService";
 import ApiRoutes from "../utils/ApiRoutes";
+import CurrencyExchangeIcon from "@mui/icons-material/CurrencyExchange";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -28,9 +29,12 @@ function Login() {
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-200">
       <div className="w-full max-w-md bg-white shadow-lg rounded-xl p-6 m-5">
-        <h1 className="text-2xl font-bold mb-4 text-center text-gray-700">
+        <div className="flex justify-center mb-2">
+          <CurrencyExchangeIcon sx={{ fontSize: 40 }} className="text-gray-700" />
+        </div>
+        <h4 className=" font-bold mb-4 text-center text-gray-700">
           Expense Tracker
-        </h1>
+        </h4>
         <h2 className="text-2xl font-bold text-center mb-6 text-gray-700">
           Login
         </h2>

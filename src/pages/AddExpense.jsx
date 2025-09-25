@@ -47,7 +47,6 @@ function AddExpense() {
                     />
                 </div>
 
-                {/* Date */}
                 <div>
                     <label className="block text-sm font-medium text-gray-900">Date</label>
                     <input
@@ -57,7 +56,6 @@ function AddExpense() {
                     />
                 </div>
 
-                {/* Category */}
                 <div>
                     <label
                         htmlFor="category"
@@ -87,7 +85,6 @@ function AddExpense() {
                     </select>
                 </div>
 
-                {/* Notes */}
                 <div>
                     <label className="block text-sm font-medium text-gray-900">
                         Notes
@@ -100,7 +97,6 @@ function AddExpense() {
                     />
                 </div>
 
-                {/* Buttons */}
                 <div className="flex gap-4 text-center">
                     <button
                         type="submit"
