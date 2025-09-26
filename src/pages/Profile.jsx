@@ -61,6 +61,7 @@ function Profile() {
                 headers: { 'Content-Type': 'multipart/form-data' },
             });
             // console.log('Upload Success:', res);
+            // console.log(profile)
             alert('Profile updated!');
             setFile(null);
             setPreview('');
@@ -71,16 +72,13 @@ function Profile() {
             alert('Upload failed!');
         }
     };
-
     return (
         <div className="pt-14 pb-18">
             <div className="flex flex-col items-center gap-4 p-5">
                 <img
-                    className="size-30 rounded-full"
-                    src={
-                        preview ||
-                        (profile ? (profile.startsWith("http") ? profile : `${BASE_URL}/${profile}`) : "/default.jpg")
-                    } alt="Profile"
+                    className="size-30 rounded-full object-cover"
+                    src={preview || profile || "/default.jpg"}
+                    alt="Profile"
                 />
                 <h1>{name}</h1>
                 {editMode && (
@@ -102,7 +100,7 @@ function Profile() {
                     </>
                 )}
 
-                <Button onClick={() => setEditMode(!editMode)}>
+                <Button className='' onClick={() => setEditMode(!editMode)} >
                     <EditIcon />
                     {editMode ? "Cancel" : "Edit Profile"}
                 </Button>
